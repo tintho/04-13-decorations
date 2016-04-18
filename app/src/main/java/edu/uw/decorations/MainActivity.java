@@ -2,6 +2,7 @@ package edu.uw.decorations;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -16,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
         //show fragment
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container, new WordListFragment());
+        ft.replace(R.id.container, WordListFragment.newInstance());
         ft.commit();
     }
 
     //toggles the action bar
     public void handleButton(View v) {
-
+        ActionBar toolbar = getSupportActionBar();
+        toolbar.hide();
     }
 
 }
